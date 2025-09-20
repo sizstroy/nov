@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/favicon.jpg" type="image/x-icon">
-    <title>Новогодняя-Лошадь-2026</title>
+    <title>Новогодняя Лошадь 2026</title>
     <style>
         * {
             margin: 0;
@@ -50,6 +50,97 @@
             .gallery-container {
                 width: 100%;
                 max-width: 600px;
+            }
+        }
+
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #19074b;
+            border: 2px solid #ffffff;
+            box-shadow: 0 4px 15px rgba(25, 7, 75, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            background-color: #2a1055;
+            box-shadow: 0 6px 20px rgba(25, 7, 75, 0.5);
+        }
+
+        .floating-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff;
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            .floating-buttons {
+                right: 15px;
+                left: auto;
+                transform: none;
+                bottom: 15px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .floating-btn svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .floating-buttons {
+                right: 10px;
+                left: auto;
+                transform: none;
+                bottom: 10px;
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .floating-btn {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .floating-btn svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        /* Для очень широких экранов - можно добавить отступ от края */
+        @media (min-width: 1200px) {
+            .floating-buttons {
+                right: 30px;
+                left: auto;
+                transform: none;
+                bottom: 30px;
             }
         }
     </style>
@@ -127,6 +218,23 @@
             <img src="./assets/Слайд68.SVG" alt="SVG 68">
             <img src="./assets/Слайд69.SVG" alt="SVG 69">
         </div>
+    </div>
+
+    <!-- Плавающие кнопки -->
+    <div class="floating-buttons">
+        <!-- Кнопка "На главную" -->
+        <a href="https://sizstroy.by/#prise_block" class="floating-btn" title="Перейти к прайс-листам">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z"/>
+            </svg>
+        </a>
+        
+        <!-- Кнопка "Вверх страницы" -->
+        <a href="#" class="floating-btn" title="Наверх" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 14L12 9L17 14H7Z"/>
+            </svg>
+        </a>
     </div>
 </body>
 </html>
